@@ -1,0 +1,12 @@
+.project
+.settings
+.diff
+.patch
+.tmp
+.idea/
+
+node_modules/
+bower_components/
+.tmp/
+# dist/
+coverage/

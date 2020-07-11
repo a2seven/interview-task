@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="users-list__wrapper wrapper">
+    <div class="users-list__header">
+      <div>
+        <h2>User list</h2>
+        <breadcrumbs data="vmUsers.breadcrumbs"></breadcrumbs>
+      </div>
+      <div>
+        <a class="btn btn-success btn-lg" ui-sref="userAdd" >
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Add User
+        </a>
+      </div>
+    </div>
+    <div class="users-list">
+      <ulist users="vmUsers.users" on-remove="vmUsers.remove" on-edit="vmUsers.goToEdit"></ulist>
+    </div>
+  </div>
+</div>

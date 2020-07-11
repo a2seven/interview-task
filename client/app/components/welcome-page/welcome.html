@@ -1,0 +1,10 @@
+<div class="welcome__wrapper">
+  <div class="welcome" ng-class="{appear: welcomeVm.appear}">
+    <h1>{{'welcome.helloWorld' | translate}}</h1>
+    <p>{{'welcome.text' | translate}}</p>
+    <div class="welcome__btns">
+      <button ng-click="welcomeVm.goToUserList()" class="btn btn-primary btn-block btn-lg">{{'welcome.getStartedBtn' | translate}}</button>
+    </div>
+  </div>
+</div>
+

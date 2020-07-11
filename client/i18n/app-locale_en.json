@@ -1,0 +1,20 @@
+{
+  "welcome": {
+    "helloWorld": "Welcome to Interview task",
+    "text": "Need to create a user list with filter. Need to add ability to add / edit / delete",
+    "getStartedBtn" : "Get started",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter a name"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter a description"
+    },
+    "show": "Show",
+    "submit": "Send"
+  },
+  "users": {
+    "role" : "Role"
+  }
+}

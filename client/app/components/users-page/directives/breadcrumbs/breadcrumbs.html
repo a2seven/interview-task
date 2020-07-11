@@ -1,0 +1,6 @@
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item" ng-repeat="val in brcVm.data">
+    <a ng-if="val.url != ''" ui-sref="{{val.url}}">{{val.name}}</a>
+    <span ng-if="val.url == ''" ui-sref="{{val.url}}">{{val.name}}</span>
+  </li>
+</ul>

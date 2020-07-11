@@ -1,0 +1,41 @@
+<form name="aForm" class="edit-form" novalidate>
+	<div class="form-group" ng-class="{'has-error': aForm.fname.$invalid && aForm.fname.$dirty}">
+		<label for="exampleInputEmail1">User firstname</label>
+		<input type="text" class="form-control" name="fname" ng-pattern="uformVm.validationRules.onlyLetters" ng-model="uformVm.user.fname" required placeholder="First name">
+		<ng-messages for="aForm.fname.$error" ng-show="aForm.fname.$invalid && aForm.fname.$dirty">
+			<span ng-show="aForm.fname.$error.required" class="error-text">This field is required</span>
+			<span ng-show="aForm.fname.$error.pattern" class="error-text">First name can not contains numbers or symbols</span>
+    </ng-messages>
+	</div>
+	<div class="form-group" ng-class="{'has-error': aForm.lname.$invalid && aForm.lname.$dirty}">
+		<label for="exampleInputPassword1">User lastname</label>
+		<input type="text" class="form-control" name="lname" ng-pattern="uformVm.validationRules.onlyLetters" ng-model="uformVm.user.lname" required placeholder="Last name">
+		<ng-messages for="aForm.lname.$error" ng-show="aForm.lname.$invalid && aForm.lname.$dirty">
+			<span ng-show="aForm.lname.$error.required" class="error-text">This field is required</span>
+			<span ng-show="aForm.lname.$error.pattern" class="error-text">Last name can not contains numbers or symbols</span>
+    </ng-messages>
+	</div>
+	<div class="form-group" ng-class="{'has-error': aForm.email.$invalid && aForm.email.$dirty}">
+		<label for="exampleInputPassword1">User email</label>
+		<input type="email" class="form-control" name="email" ng-model="uformVm.user.email" required placeholder="email">
+		<ng-messages for="aForm.email.$error" ng-show="aForm.email.$invalid && aForm.email.$dirty">
+			<span ng-show="aForm.email.$error.required" class="error-text">This field is required</span>
+			<span ng-show="aForm.email.$error.email" class="error-text">Invalid email address</span>
+    </ng-messages>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Select a Role</label>
+		<!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+		<ui-select ng-model="uformVm.user.role" title="Choose a role" search-enabled="false">
+			<ui-select-match placeholder="Select or search a role in the list...">{{$select.selected.name}}</ui-select-match>
+			<ui-select-choices repeat="role in uformVm.roles | filter: $select.search">
+				<span ng-bind-html="role.name | highlight: $select.search"></span>
+				<!-- <small ng-bind-html="country.code | highlight: $select.search"></small> -->
+			</ui-select-choices>
+		</ui-select>
+	</div>
+	<div class="edit-form__buttons">
+		<a ui-sref="users" class="btn btn-default">Cancel</a>
+		<button ng-disabled="!aForm.$valid" ng-click="uformVm.send()" type="submit" class="btn btn-success">Save</button>
+	</div>
+</form>

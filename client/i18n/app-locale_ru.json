@@ -1,0 +1,16 @@
+{
+  "welcome": {
+    "helloWorld": "Привет мир !",
+    "text": "Это тестовое задание",
+    "name": {
+      "label": "Имя",
+      "placeholder": "Введите имя"
+    },
+    "description": {
+      "label": "Описание",
+      "placeholder": "Введиет описание"
+    },
+    "show": "Показать",
+    "submit": "Отправить"
+  }
+}

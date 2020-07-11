@@ -1,0 +1,22 @@
+<div class="users-list__filter">
+	<form class="form-inline">
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</span>
+				<input ng-change="ufilterVm.update()" style="width: 300px" type="text" ng-model="ufilterVm.filter.search" class="form-control" placeholder="Type here to search" aria-describedby="basic-addon1">
+			</div>
+		</div>
+		<div class="form-group">
+			<!-- <label class="sr-only" for="exampleInputPassword3">Password</label> -->
+			<!-- <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password"> -->
+			<ui-select on-select="ufilterVm.update()" ng-model="ufilterVm.filter.role" title="Choose a role" search-enabled="false" style="width: 200px">
+				<ui-select-match placeholder="Select or search a role in the list...">{{$select.selected.name}}</ui-select-match>
+				<ui-select-choices repeat="role in ufilterVm.roles | filter: $select.search">
+					<span ng-bind-html="role.name | highlight: $select.search"></span>
+				</ui-select-choices>
+			</ui-select>
+		</div>
+	</form>
+</div>
